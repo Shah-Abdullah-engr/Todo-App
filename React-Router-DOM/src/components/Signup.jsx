@@ -9,9 +9,13 @@ const Signup = () => {
   const [name,setName]=useState();
   const [email,setEmail]=useState();
   const [password,setPassword]=useState();
+  const [confirmpass,setConfirmpass]=useState();
+  const [visible,setVisible]=useState();
+  const [showpass,setShowpass]=useState();
+
   const handleSignup = (e) => {
     e.preventDefault();
-    const newUSer={name,email,password};
+    const newUSer={name,email,password,confirmpass,showpass};
     console.log("New USer Registered",newUSer);
 
     alert('Account Created!');
@@ -24,7 +28,14 @@ const Signup = () => {
         <h2>Create Account</h2>
         <input type="text" placeholder="Full Name" onChange={(e)=>{setName(e.target.value)}}required />
         <input type="email" placeholder="Email Address" onChange={(e)=>{setEmail(e.target.value)}} required />
-        <input type="password" placeholder="Password"onChange={(e)=>{setPassword(e.target.value)}} required />
+        <div className='input-group'>
+        <input type={visible?"text":"password"}  placeholder="Password" onChange={(e)=>{setPassword(e.target.value)}} required />
+         <button className='eye-btn' type='button' onClick={()=>{setVisible(!visible)}}>{visible ? "🔒":"👁️"}</button>
+         </div>
+         <div className='input-group'>
+        <input type={showpass?"text":"password"}  placeholder="Confirm Password"onChange={(e)=>{setConfirmpass(e.target.value)}} required />
+        <button className='eye-btn' type='button' onClick={()=>{setShowpass(!showpass)}}>{showpass ? "🔒":"👁️"}</button>
+        </div>
         
         <Mybutton title={"Signup"} type='submit'/>
         
