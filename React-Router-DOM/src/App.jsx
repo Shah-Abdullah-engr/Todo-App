@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Children } from 'react'
 import{createBrowserRouter, RouterProvider}from'react-router-dom';
 import Login from './components/login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
+import Protected from './components/Protected';
 import "./components/App.css"
 const App = () => {
   const router=createBrowserRouter(
@@ -15,10 +16,12 @@ const App = () => {
        path:"/signup",
         element:<Signup/> 
       },
+    
       {
         path:"/dashboard",
-        element: <Dashboard/>},
-    ]
+        element:<Dashboard/>},
+      ]
+    
 
 
   );

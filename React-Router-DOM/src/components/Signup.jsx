@@ -13,15 +13,24 @@ const Signup = () => {
   const [visible,setVisible]=useState();
   const [showpass,setShowpass]=useState();
 
-  const handleSignup = (e) => {
+
+
+ const handleSignup = (e) => {
     e.preventDefault();
-    const newUSer={name,email,password,confirmpass,showpass};
-    console.log("New USer Registered",newUSer);
+    const newUser={name,email,password,confirmpass};
 
-    alert('Account Created!');
+    const existingData=localStorage.setItem("User-data");
+    let userLists=existingData? JSON.parse(existingData):[];
+    if(!Array.isArray(userLists)){
+      userLists=[userLists];
+    }
+
+    userLists.push(newUser);
+
+    localStorage.setItem("User-data",JSON.stringify(newUser));
+    alert("Account Created");
     navigate("/");
-  };
-
+};
   return (
     <div className="container">
       <form className="form-card" onSubmit={handleSignup}>

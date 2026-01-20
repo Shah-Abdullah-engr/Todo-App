@@ -7,17 +7,34 @@ const login = () => {
     const[password,setPassword]=useState();
     const[visible,setVisible]=useState(false);
     const navigate= useNavigate();
-    const handlelogin=(e)=>{
-        e.preventDefault();
-        
-        if(
-            email==="hashmiabdullah@gmail.com" && password==="12343"){
-            alert("Welcome back");
-            navigate("/dashboard")
-        }else{
-            alert("Wrong Email or Password");
-        }
+    
+   const handlelogin = (e) => {
+    e.preventDefault();
+    const rawData=localStorage.getItem("User-data");
+    const allUsers =rawData ? JSON.parse(rawData):[];
+    const foundUser=allUsers.find(user=>
+        user.email.trim()===email.trim()&&user.password.trim()===password.trim());
+    if(foundUser){
+        const loginToken ={loginEmail:foundUser.email,loginPass:foundUser.password};
+        localStorage.setItem("Token",JSON.stringify(loginToken));
+        alert("Login Successfully");
+        navigate("/dashboard");
+    }else{
+        alert("Wrong Password or Email!! Try Again");
     }
+};
+         
+        // if(savedData && savedData.email ===email && savedData.password ===password){
+        //     const loginToken={loginEmail:email,loginPasa:password}
+        //     localStorage.setItem("Token",JSON.stringify(loginToken));
+              
+        //     alert("Login Successfully");
+        //     navigate("/dashboard");
+            
+        // }else{
+        //     alert("wrong Email or Password!! try again")
+        // }
+    
   return (
     <div className='container'>
         <form className='form-card' onSubmit={handlelogin}>
