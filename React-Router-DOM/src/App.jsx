@@ -3,7 +3,7 @@ import{createBrowserRouter, RouterProvider}from'react-router-dom';
 import Login from './components/login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
-import Protected from './components/Protected';
+import Protected from './components/Protectedroutes';
 import "./components/App.css"
 const App = () => {
   const router=createBrowserRouter(
@@ -19,8 +19,13 @@ const App = () => {
     
       {
         path:"/dashboard",
-        element:<Dashboard/>},
-      ]
+        element: (
+        <Protected>
+            <Dashboard />
+        </Protected>
+    )
+  }
+    ]
     
 
 

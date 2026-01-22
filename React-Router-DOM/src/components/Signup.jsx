@@ -19,7 +19,7 @@ const Signup = () => {
     e.preventDefault();
     const newUser={name,email,password,confirmpass};
 
-    const existingData=localStorage.setItem("User-data");
+    const existingData=localStorage.getItem("User-data");
     let userLists=existingData? JSON.parse(existingData):[];
     if(!Array.isArray(userLists)){
       userLists=[userLists];
@@ -27,7 +27,7 @@ const Signup = () => {
 
     userLists.push(newUser);
 
-    localStorage.setItem("User-data",JSON.stringify(newUser));
+    localStorage.setItem("User-data",JSON.stringify(userLists));
     alert("Account Created");
     navigate("/");
 };
