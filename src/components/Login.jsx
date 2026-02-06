@@ -15,7 +15,7 @@ const login = () => {
     const foundUser=allUsers.find(user=>
         user.email.trim()===email.trim()&&user.password.trim()===password.trim());
     if(foundUser){
-        const loginToken ={loginEmail:foundUser.email,loginPass:foundUser.password};
+        const loginToken ={loginID:foundUser.id,loginEmail:foundUser.email,loginPass:foundUser.password};
         localStorage.setItem("Token",JSON.stringify(loginToken));
         alert("Login Successfully");
         navigate("/dashboard");

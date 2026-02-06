@@ -6,7 +6,7 @@ const Protected = ({ children }) => {
 
     const token = localStorage.getItem("Token");
 
-   
+   console.log(token)
     if (!token) {
         return <Navigate to="/" replace />;
     }

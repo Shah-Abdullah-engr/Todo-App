@@ -17,16 +17,13 @@ const Signup = () => {
 
  const handleSignup = (e) => {
     e.preventDefault();
-    const newUser={name,email,password,confirmpass};
-
+    const newUser={id: crypto.randomUUID(),name,email,password,confirmpass};
     const existingData=localStorage.getItem("User-data");
-    let userLists=existingData? JSON.parse(existingData):[];
+    const userLists=existingData? JSON.parse(existingData):[];
     if(!Array.isArray(userLists)){
       userLists=[userLists];
     }
-
     userLists.push(newUser);
-
     localStorage.setItem("User-data",JSON.stringify(userLists));
     alert("Account Created");
     navigate("/");

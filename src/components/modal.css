@@ -1,0 +1,26 @@
+/* .modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+} */
+
+.modal-box input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+.modal-btns {
+  display: flex;
+  justify-content: space-between;
+}

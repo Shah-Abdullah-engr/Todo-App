@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #1a1a2e; /* Dark professional theme */
+  background: #1a1a2e; 
   font-family: sans-serif;
 }
 
@@ -15,45 +15,49 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
-h2 { text-align: center; color: #1a1a2e; margin-bottom: 20px; }
+h2 { 
+  text-align: center;
+   color: #1a1a2e;
+   margin-bottom: 20px;
+ }
 
-/* Container ko relative karna lazmi hai taake button iske andar move kare */
+
 .input-group {
   position: relative;
   width: 100%;
-  margin-bottom: 15px; /* Margin ab div par lagega */
+  margin-bottom: 15px; 
 }
 
-/* Aapki original input CSS */
+
 .input-group input {
   width: 100%;
   padding: 12px;
-  padding-right: 45px; /* Eye button ke liye right side par jagah chhodi hai */
+  padding-right: 45px; 
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
-  background-color: #fff; /* Transparent nahi rakha */
+  background-color: #fff; 
   outline: none;
 }
 input {
   width: 100%;
   padding: 12px;
-  padding-right: 45px; /* Eye button ke liye right side par jagah chhodi hai */
+  padding-right: 45px; 
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
-  background-color: #fff; /* Transparent nahi rakha */
+  background-color: #fff;
   outline: none;
   margin-bottom: 8px;
 }
 
-/* Eye Button ki styling */
+
 .eye-btn {
   position: absolute;
-  right: 10px; /* Input ke andar right side se gap */
+  right: 10px;
   top: 50%;
-  transform: translateY(-50%); /* Bilkul vertical center mein lane ke liye */
-  background: transparent; /* Button ka apna background khatam */
+  transform: translateY(-50%); 
+  background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
@@ -61,7 +65,7 @@ input {
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  z-index: 10; /* Taake button input ke upar nazar aaye */
+  z-index: 10; 
 }
 
 .eye-btn:hover {
