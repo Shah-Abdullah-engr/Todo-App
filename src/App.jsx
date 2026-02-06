@@ -1,6 +1,6 @@
 import React, { Children } from 'react'
 import{createBrowserRouter, RouterProvider}from'react-router-dom';
-import Login from './components/login';
+import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
 import Protected from './components/Protectedroutes';
